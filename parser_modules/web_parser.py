@@ -1,7 +1,9 @@
-import number_parser
-
 # Finds a phone number located within a Craigslist post.
+# Author: William S.
+# Date: 03/14/22
 
+
+import number_parser
 
 def find_phone_number_from_file_name(file_name):
 	"""Returns a phone number array if a phone number exists within HTML file, 
@@ -17,7 +19,10 @@ def find_phone_number_from_HTML(file_str):
 	try:
 		start = file_str.index('<section id="postingbody">')
 		start = file_str.index('</div>', start) + 5
-		end = file_str.index('</section>', start)
+		try:
+			end = file_str.index('<a href', start)
+		except:
+			end = file_str.index('</section>', start)
 	except:
 		return print('File does not contain <section id="postingbody">')
 
@@ -30,7 +35,8 @@ def find_phone_number_from_HTML(file_str):
 
 
 def print_phone_number(arr):
-	"""Returns a string of the arr printed in the format ###-###-####, if len(arr) == 11. 
+	"""Returns a string of the arr printed in the format ###-###-####, \
+	if len(arr) == 11. 
 	
 	>>> num_print([8,0,5,1,2,3,4,5,6,7])
 	"(805)-123-4567"
