@@ -1,3 +1,9 @@
+# Number parsing function.
+# Extracts integer array from string of char and int
+# Author: William S.
+# Date: 03/14/22
+
+
 def parse_number(num_string, max_length=11):
 	"""Returns an int array of num_string. 
 	Parses until it finds a non-number entity, and then returns the array. 
@@ -28,7 +34,7 @@ def parse_number(num_string, max_length=11):
 			k = int(num_string[0])
 			arr.append(k)
 			num_string = num_string[1:]
-		except:								# found typed number
+		except ValueError:					# found typed number
 			if num_string[0] == ' ' or num_string[0] == "-":
 				num_string = num_string[1:]
 			elif num_string[0] == "(" or num_string[0] == ")":
