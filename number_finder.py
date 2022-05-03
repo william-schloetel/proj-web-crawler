@@ -5,8 +5,8 @@
 
 
 def find_number(text_str):
-	i, length = 0, len(text_str) - 1
-	while(i < length):
+	i, length = 0, len(text_str)
+	while(i < length - 1):
 		if text_str[i:i+4] == 'http':					#if you find hyperlink
 			while(text_str[i] != ' ' and i < length):
 				i += 1
@@ -29,7 +29,7 @@ def translate_number(num_string, max_length=10):
 	[1, 2, 3, 4, 5, 6, 7, 0, 9, 1]
 
 	>>> parse_number("1 805 four three three three three four sixty", 12)
-	[1, 8, 0, 5, 4, 3, 3, 3, 3, 6, 8]
+	[1, 8, 0, 5, 4, 3, 3, 3, 3, 4, 6, 0]
 
 	>>> parse_number("1 2 twee")
 	[1, 2]
