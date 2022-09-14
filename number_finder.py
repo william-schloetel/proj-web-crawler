@@ -22,19 +22,19 @@ def translate_number(num_string, max_length=10):
 	Parses until it finds a non-number entity, and then returns the array. 
 	Ignores "-", ")", "(", and " "
 
-	>>> parse_number("Sixsix1 6two3 51one6")
+	>>> translate_number("Sixsix1 6two3 51one6")
 	[6, 6, 1, 6, 2, 3, 5, 1, 1, 6]
 
-	>>> parse_number("One23 Four56 Seventy9one")
+	>>> translate_number("One23 Four56 Seventy9one")
 	[1, 2, 3, 4, 5, 6, 7, 0, 9, 1]
 
-	>>> parse_number("1 805 four three three three three four sixty", 12)
+	>>> translate_number("1 805 four three three three three four sixty", 12)
 	[1, 8, 0, 5, 4, 3, 3, 3, 3, 4, 6, 0]
 
-	>>> parse_number("1 2 twee")
+	>>> translate_number("1 2 twee")
 	[1, 2]
 
-	>>> parse_number("1  FoUR-67    2 SHIT")
+	>>> translate_number("1  FoUR-67    2 SHIT")
 	[1, 4, 6, 7, 2]
 
 	"""
