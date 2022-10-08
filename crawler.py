@@ -1,3 +1,8 @@
+# Web crawler for retrieving Craigslist data.
+# Author: William S. 
+# Date: 03/14/22
+
+
 import search_retrieval
 
 def search(starting_post=200, link_max=10):

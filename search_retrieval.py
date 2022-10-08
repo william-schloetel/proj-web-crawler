@@ -1,3 +1,9 @@
+# Functionality for retrieving Craigslist posts.
+# Uses BeautifulSoup library to parse documents.
+# Author: William S.
+# Date: 03/10/22
+
+
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
