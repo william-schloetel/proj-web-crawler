@@ -7,8 +7,8 @@
 def find_number(text_str):
 	i, length = 0, len(text_str)
 	while(i < length - 1):
-		if text_str[i:i+4] == 'http':					#if you find hyperlink
-			while(text_str[i] != ' ' and i < length):
+		if text_str[i:i+4] == 'http':				#if you find hyperlink
+			while(i < length - 1 and text_str[i] != ' '):
 				i += 1
 		num = translate_number(text_str[i:length])
 		if len(num) == 10:
